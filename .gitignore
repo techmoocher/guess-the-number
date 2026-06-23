@@ -23,5 +23,12 @@
 hs_err_pid*
 replay_pid*
 
-# OS generated files
+# Others
 .DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bin
+*.tmp
+*.bak
