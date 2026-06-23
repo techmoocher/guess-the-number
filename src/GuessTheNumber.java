@@ -53,8 +53,6 @@ public class GuessTheNumber {
 
     private static void levelSelection(Scanner sc) {
         if (!isFirstPlay) {
-            sc.nextLine();
-
             foxSpeak("You survive!? Wanna stick to the same level?\n(you don't have have to, you know...", 35, 500, true);
             System.out.print(">>> Enter your choice [Y/n]: ");
 
@@ -109,6 +107,8 @@ public class GuessTheNumber {
             }
         }
 
+        System.out.println();
+
         switch (level) {
             case 1 -> {
                 foxSpeak(PINK + "Easy? How adorable... >3<" + RESET, 40, 750, true);
@@ -151,8 +151,8 @@ public class GuessTheNumber {
                 else {
                     System.out.println(RED + "OUT OF BOUNDS!" + RESET +
                                         "\n\nThe number must be between 1 and 100, alright?");
-                    foxSpeak("Teacher, could you please teach them to count?", 35, 300, true);
-                    System.out.print(">>> Enter your choice: ");
+                    foxSpeak("Could someone please teach this hoo-man to count?", 35, 300, true);
+                    System.out.print(">>> Enter your guess: ");
                 }
             }
             
@@ -167,11 +167,11 @@ public class GuessTheNumber {
             if (guess != target) {
                 if (guess < target) {
                     System.out.println(RED + "INCORRECT!" + RESET +
-                                        " Too low buddy! Don't underestimate me. ;)\n");
+                                        "\nToo LOW buddy! Don't underestimate me. ;)\n");
                 }
                 else if (guess > target) {
                     System.out.println(RED + "INCORRECT!" + RESET +
-                                        " Too high blud! Just double-digit numbers, not rocket science. >:(\n");
+                                        "\nToo HIGH blud! Just double-digit numbers, not rocket science. >:(\n");
                 }
 
                 if (chances == 0) {
@@ -215,10 +215,10 @@ public class GuessTheNumber {
                 repeat = false;
 
                 if (isFirstPlay) {
-                    foxSpeak(PINK + "HELLO..." + RESET, 100, 500, true);
-                    foxSpeak(PINK + "I'm Karu, a naughty fox" + RESET, 80, 0, true);
+                    foxSpeak(PINK + "HELLO..." + RESET, 50, 200, true);
+                    foxSpeak(PINK + "I'm Karu, a naughty fox" + RESET, 60, 0, true);
                     System.out.println("/\\../\\\n");
-                    sleep(500);
+                    sleep(1000);
 
                     foxSpeak("Welcome to ", 50, 500, false);
                     foxSpeak("GUESS THE NUMBER!!! (fox limited edition)\n", 50, 1000, true);
@@ -270,6 +270,7 @@ public class GuessTheNumber {
                         case 1 -> {
                             repeat = true;
                             ok = true;
+                            System.out.flush();
                         }
                         case 2 -> {
                             System.out.println(YELLOW + "\n--- Your Time Records ---" + RESET);
@@ -290,6 +291,7 @@ public class GuessTheNumber {
                             System.out.println();
                         }
                         case 4 -> {
+                            System.out.println();
                             foxSpeak(PINK + "Awww, why so soon? S-sorry to see you go... (T~T)" + RESET, 80, 0, false);
                             repeat = false;
                             ok = true;
